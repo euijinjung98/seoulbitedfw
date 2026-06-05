@@ -1,0 +1,82 @@
+[
+  {
+    "name": "BCD Tofu House",
+    "city": "Carrollton",
+    "category": "Soups & Stews",
+    "bestFor": ["first-timers", "comfort food", "solo meal"],
+    "recommendedDishes": ["soondubu", "tofu soup"],
+    "priceRange": "$$",
+    "neighborhood": "Old Denton / Trinity Mills",
+    "koreanTake": "A safe first stop for people who want Korean comfort food without overthinking the menu."
+  },
+  {
+    "name": "No. 1 Plus Chicken",
+    "city": "Carrollton",
+    "category": "Korean Fried Chicken",
+    "bestFor": ["late night", "group meal", "takeout"],
+    "recommendedDishes": ["Korean fried chicken", "yangnyeom chicken", "soy garlic chicken"],
+    "priceRange": "$$",
+    "neighborhood": "Old Denton Road",
+    "koreanTake": "Good category fit for crispy Korean fried chicken cravings."
+  },
+  {
+    "name": "Yorienn Chicken",
+    "city": "Carrollton",
+    "category": "Korean Fried Chicken",
+    "bestFor": ["fried chicken", "casual dinner", "Korean dishes"],
+    "recommendedDishes": ["Korean fried chicken", "buldak", "mandu jeongol"],
+    "priceRange": "$$",
+    "neighborhood": "Carrollton",
+    "koreanTake": "A chicken-focused spot that also has Korean comfort dishes beyond just wings."
+  },
+  {
+    "name": "Doma Seolleongtang",
+    "city": "Carrollton",
+    "category": "Soups & Stews",
+    "bestFor": ["seolleongtang", "cold weather", "comfort food"],
+    "recommendedDishes": ["seolleongtang"],
+    "priceRange": "$$",
+    "neighborhood": "Carrollton Koreatown",
+    "koreanTake": "A good fit for people who want Korean beef-bone soup instead of BBQ."
+  },
+  {
+    "name": "Hampyong Noodle",
+    "city": "Carrollton",
+    "category": "Noodles",
+    "bestFor": ["noodles", "lunch", "Korean cold noodles"],
+    "recommendedDishes": ["naengmyeon", "Korean noodles"],
+    "priceRange": "$$",
+    "neighborhood": "Carrollton Koreatown",
+    "koreanTake": "Useful for people looking beyond BBQ and fried chicken."
+  },
+  {
+    "name": "Ari Korean BBQ",
+    "city": "Carrollton",
+    "category": "Korean BBQ",
+    "bestFor": ["group dinner", "date night", "first-timers"],
+    "recommendedDishes": ["Korean BBQ", "galbi", "samgyeopsal"],
+    "priceRange": "$$$",
+    "neighborhood": "Carrollton Koreatown",
+    "koreanTake": "A strong category fit for people looking for a proper Korean BBQ night."
+  },
+  {
+    "name": "Maht Gaek",
+    "city": "Carrollton",
+    "category": "Korean Pub Food",
+    "bestFor": ["friends", "Korean drinking food", "late dinner"],
+    "recommendedDishes": ["Korean pub dishes", "shared plates"],
+    "priceRange": "$$",
+    "neighborhood": "Carrollton Koreatown",
+    "koreanTake": "Better for people who want a more Korean-style casual night out."
+  },
+  {
+    "name": "Wicked Snow",
+    "city": "Carrollton",
+    "category": "Dessert & Café",
+    "bestFor": ["dessert", "bingsoo", "after dinner"],
+    "recommendedDishes": ["bingsoo", "Korean shaved ice"],
+    "priceRange": "$$",
+    "neighborhood": "Carrollton Koreatown",
+    "koreanTake": "A dessert stop that makes sense after BBQ, chicken, or soup."
+  }
+]
