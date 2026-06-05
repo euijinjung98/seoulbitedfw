@@ -130,6 +130,18 @@
       color: #555;
     }
 
+    .link-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
     .filters {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
@@ -261,10 +273,10 @@
       </p>
 
       <div class="grid">
-        <div class="card">
+        <a class="card link-card" href="best-korean-food-dfw-first-timers.html">
           <h3>Best Korean Food in DFW for First-Timers</h3>
           <p>A simple guide for people new to Korean food, from BBQ to tofu soup to Korean fried chicken.</p>
-        </div>
+        </a>
 
         <div class="card">
           <h3>Best Korean BBQ in DFW</h3>
