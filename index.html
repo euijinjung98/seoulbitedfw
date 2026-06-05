@@ -23,6 +23,9 @@
       align-items: center;
       border-bottom: 1px solid #eee;
       background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .logo {
@@ -40,7 +43,7 @@
 
     .hero {
       padding: 80px 8%;
-      max-width: 950px;
+      max-width: 1000px;
     }
 
     .tag {
@@ -62,7 +65,7 @@
 
     .hero p {
       font-size: 21px;
-      max-width: 720px;
+      max-width: 760px;
       color: #444;
     }
 
@@ -79,6 +82,7 @@
       text-decoration: none;
       font-weight: 700;
       margin-right: 12px;
+      margin-bottom: 10px;
     }
 
     .button.secondary {
@@ -93,12 +97,18 @@
 
     h2 {
       font-size: 34px;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: #555;
+      max-width: 720px;
+      margin-bottom: 28px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
     }
 
@@ -113,9 +123,72 @@
     .card h3 {
       margin-top: 0;
       font-size: 22px;
+      margin-bottom: 8px;
     }
 
     .card p {
+      color: #555;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+      max-width: 900px;
+    }
+
+    input, select {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .restaurant-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .restaurant-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .pill {
+      background: #f3f3f3;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #444;
+    }
+
+    .price {
+      background: #ffe1d2;
+    }
+
+    .dishes {
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .take {
+      margin-top: 12px;
+      color: #444;
+    }
+
+    .empty {
+      padding: 24px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #eee;
       color: #555;
     }
 
@@ -126,7 +199,7 @@
       background: #fff;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       header {
         display: block;
       }
@@ -146,6 +219,10 @@
 
       .hero {
         padding-top: 50px;
+      }
+
+      .filters {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -172,17 +249,21 @@
       </p>
 
       <div class="buttons">
-        <a class="button" href="#guides">Start with the food guides</a>
-        <a class="button secondary" href="#restaurants">Browse restaurants</a>
+        <a class="button" href="#restaurants">Browse restaurants</a>
+        <a class="button secondary" href="#guides">Start with the food guides</a>
       </div>
     </section>
 
     <section id="guides">
       <h2>Start here</h2>
+      <p class="section-subtitle">
+        Simple guides for people who want Korean food but do not know what to order first.
+      </p>
+
       <div class="grid">
         <div class="card">
           <h3>Best Korean Food in DFW for First-Timers</h3>
-          <p>A simple guide for people who want Korean food but do not know where to start.</p>
+          <p>A simple guide for people new to Korean food, from BBQ to tofu soup to Korean fried chicken.</p>
         </div>
 
         <div class="card">
@@ -198,38 +279,31 @@
     </section>
 
     <section id="restaurants">
-      <h2>Restaurant categories</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Korean BBQ</h3>
-          <p>Galbi, samgyeopsal, brisket, marinated meats, and group-friendly spots.</p>
-        </div>
+      <h2>Restaurant directory</h2>
+      <p class="section-subtitle">
+        Search by restaurant name, city, category, dishes, or the kind of meal you want.
+      </p>
 
-        <div class="card">
-          <h3>Soups & Stews</h3>
-          <p>Seolleongtang, gamjatang, soondubu, kimchi jjigae, and comfort food.</p>
-        </div>
+      <div class="filters">
+        <input id="searchInput" type="text" placeholder="Search Korean BBQ, soondubu, Carrollton..." />
 
-        <div class="card">
-          <h3>Korean Fried Chicken</h3>
-          <p>Crispy chicken, yangnyeom sauce, soy garlic, and late-night cravings.</p>
-        </div>
+        <select id="cityFilter">
+          <option value="">All cities</option>
+        </select>
 
-        <div class="card">
-          <h3>Cafés & Bakeries</h3>
-          <p>Korean cafés, bingsoo, pastries, coffee, study spots, and dessert places.</p>
-        </div>
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+        </select>
       </div>
+
+      <div id="restaurantGrid" class="grid"></div>
     </section>
 
     <section id="contact">
       <h2>Suggest a restaurant</h2>
       <p>
         Know a Korean restaurant, café, or hidden spot in DFW that should be listed?
-        Send suggestions to: <strong>hello@seoulbitedfw.com</strong>
-      </p>
-      <p>
-        Email is coming later. For now, this is a placeholder while the site is being built.
+        Email is coming soon. For now, this site is being built as a public beta.
       </p>
     </section>
   </main>
@@ -237,5 +311,117 @@
   <footer>
     <p>© 2026 SeoulBite DFW. Korean food guide for Dallas-Fort Worth.</p>
   </footer>
+
+  <script>
+    let restaurants = [];
+
+    const restaurantGrid = document.getElementById("restaurantGrid");
+    const searchInput = document.getElementById("searchInput");
+    const cityFilter = document.getElementById("cityFilter");
+    const categoryFilter = document.getElementById("categoryFilter");
+
+    async function loadRestaurants() {
+      try {
+        const response = await fetch("restaurants.json");
+        restaurants = await response.json();
+
+        populateFilters();
+        renderRestaurants(restaurants);
+      } catch (error) {
+        restaurantGrid.innerHTML = `
+          <div class="empty">
+            Restaurant data could not load yet. Check that restaurants.json is uploaded correctly.
+          </div>
+        `;
+      }
+    }
+
+    function populateFilters() {
+      const cities = [...new Set(restaurants.map(item => item.city))].sort();
+      const categories = [...new Set(restaurants.map(item => item.category))].sort();
+
+      cities.forEach(city => {
+        const option = document.createElement("option");
+        option.value = city;
+        option.textContent = city;
+        cityFilter.appendChild(option);
+      });
+
+      categories.forEach(category => {
+        const option = document.createElement("option");
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
+      });
+    }
+
+    function renderRestaurants(list) {
+      if (list.length === 0) {
+        restaurantGrid.innerHTML = `
+          <div class="empty">
+            No restaurants found. Try a different search or filter.
+          </div>
+        `;
+        return;
+      }
+
+      restaurantGrid.innerHTML = list.map(restaurant => `
+        <article class="restaurant-card">
+          <h3>${restaurant.name}</h3>
+
+          <div class="restaurant-meta">
+            <span class="pill">${restaurant.city}</span>
+            <span class="pill">${restaurant.category}</span>
+            <span class="pill price">${restaurant.priceRange}</span>
+            <span class="pill">${restaurant.neighborhood}</span>
+          </div>
+
+          <div class="dishes">
+            Best dishes: ${restaurant.recommendedDishes.join(", ")}
+          </div>
+
+          <p class="take">
+            ${restaurant.koreanTake}
+          </p>
+
+          <div class="restaurant-meta">
+            ${restaurant.bestFor.map(item => `<span class="pill">${item}</span>`).join("")}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function filterRestaurants() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedCity = cityFilter.value;
+      const selectedCategory = categoryFilter.value;
+
+      const filtered = restaurants.filter(restaurant => {
+        const searchableText = `
+          ${restaurant.name}
+          ${restaurant.city}
+          ${restaurant.category}
+          ${restaurant.neighborhood}
+          ${restaurant.recommendedDishes.join(" ")}
+          ${restaurant.bestFor.join(" ")}
+          ${restaurant.koreanTake}
+        `.toLowerCase();
+
+        const matchesSearch = searchableText.includes(searchTerm);
+        const matchesCity = selectedCity === "" || restaurant.city === selectedCity;
+        const matchesCategory = selectedCategory === "" || restaurant.category === selectedCategory;
+
+        return matchesSearch && matchesCity && matchesCategory;
+      });
+
+      renderRestaurants(filtered);
+    }
+
+    searchInput.addEventListener("input", filterRestaurants);
+    cityFilter.addEventListener("change", filterRestaurants);
+    categoryFilter.addEventListener("change", filterRestaurants);
+
+    loadRestaurants();
+  </script>
 </body>
 </html>
